@@ -1,5 +1,7 @@
 import random
-from database import get_data
+from database import DataBase
+
+db = DataBase()
 
 
 class Option:
@@ -32,8 +34,8 @@ def pair_generator(db_range):   #генератор 2 случайных song_id
 
 def gen_q():  #генератор вопроса
     song_ids = pair_generator(150)
-    data1 = get_data('metal', song_ids[0])
-    data2 = get_data('metal', song_ids[1])
+    data1 = db.get_track_data('metal', song_ids[0])
+    data2 = db.get_track_data('metal', song_ids[1])
     opt1 = Option(data1[0], data1[1], data1[2], data1[3], data1[4])
     opt2 = Option(data2[0], data2[1], data2[2], data2[3], data2[4])
     if opt1.number > opt2.number:

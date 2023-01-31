@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 # turn VPN on!
 
 
-def show_data(url):
+def show_data(url): #просто посмотреть что там наскрэйпилось
     artist_data = []
     page = requests.get(url)
     soup = BeautifulSoup(page.text, 'lxml')
@@ -24,7 +24,7 @@ def show_data(url):
     print(artist_data)
 
 
-def prepare_data(url: str):
+def prepare_data(url: str): #скрэйпит и сохраняет нужную информацию об артисте по ссылке на его страницу
     artist_data = []
     page = requests.get(url)
     soup = BeautifulSoup(page.text, 'lxml')

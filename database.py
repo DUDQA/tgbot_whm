@@ -22,6 +22,8 @@ class DataBase:
                     f'CREATE TABLE {genre} (track_id serial PRIMARY KEY, artist varchar(32), track_name varchar(64), n_of_plays bigint)')
             conn.commit()
 
+
+
     def input_track_data(self, genre, data):
         with closing(psycopg2.connect(database="tgbot_whm", user="postgres",
                                       password="24101997", host="127.0.0.1",
@@ -44,6 +46,7 @@ class DataBase:
         return data[0]
 
 
+
     def set_user_data(self, user_id, in_game_status: bool = False, current_points=0, max_points=0):
         with closing(psycopg2.connect(database="tgbot_whm", user="postgres",
                                       password="24101997", host="127.0.0.1",
@@ -58,7 +61,7 @@ class DataBase:
                                       password="24101997", host="127.0.0.1",
                                       port="5432")) as conn:
             with conn.cursor() as cursor:
-                cursor.execute(f'SELECT * FROM  user_data VALUES WHERE user_id={user_id}')
+                cursor.execute(f'SELECT * FROM user_data WHERE user_id={user_id}')
                 data = cursor.fetchall()
             conn.commit()
         if not data:
@@ -73,6 +76,8 @@ class DataBase:
             with conn.cursor() as cursor:
                 cursor.execute(f"UPDATE user_data SET task1 = '{task1}', task2 = '{task2}', number1 = {number1}, number2 = {number2}, comp = {comp} WHERE user_id = {user_id}")
             conn.commit()
+
+
 
     def change_points(self, user_id: int, add: bool = False, current_points: int = None, max_points: int = None):
         with closing(psycopg2.connect(database="tgbot_whm", user="postgres",
@@ -97,4 +102,38 @@ class DataBase:
                 else:
                     cursor.execute(f"UPDATE user_data SET in_game_status = False WHERE user_id = {user_id}")
             conn.commit()
+
+
+
+    def set_msgid(self, user_id: int, message_id1, message_id2) -> None:
+
+        with closing(psycopg2.connect(database="tgbot_whm", user="postgres",
+                                      password="24101997", host="127.0.0.1",
+                                      port="5432")) as conn:
+            with conn.cursor() as cursor:
+                cursor.execute(f'INSERT INTO messages (user_id, msg1, msg2) VALUES ({user_id}, {message_id1}, {message_id2})')
+            conn.commit()
+
+    def upd_msgid(self, user_id: int, message_id1, message_id2) -> None:
+
+        with closing(psycopg2.connect(database="tgbot_whm", user="postgres",
+                                      password="24101997", host="127.0.0.1",
+                                      port="5432")) as conn:
+            with conn.cursor() as cursor:
+                cursor.execute(f'UPDATE messages SET msg1 = {message_id1}, msg2 = {message_id2} WHERE user_id = {user_id}')
+                conn.commit()
+
+    def get_msgid(self, user_id):
+        with closing(psycopg2.connect(database="tgbot_whm", user="postgres",
+                                      password="24101997", host="127.0.0.1",
+                                      port="5432")) as conn:
+            with conn.cursor() as cursor:
+                cursor.execute(f'SELECT msg1, msg2 FROM messages WHERE user_id={user_id}')
+                data = cursor.fetchall()
+            conn.commit()
+        if not data:
+            return None
+        else:
+            return data[0]
+
 

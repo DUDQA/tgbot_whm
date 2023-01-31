@@ -3,6 +3,10 @@ from scraper import prepare_data
 import artists
 
 
+
+TOKEN = '5745511209:AAH6fZx8fkX_PXSoASxU74wBVpuKiGs7ofI'
+
+
 def refresh_data_metal():
     db = DataBase()
     db.truncate_table_genre('metal')
