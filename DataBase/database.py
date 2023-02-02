@@ -84,7 +84,8 @@ class DataBase:
                                       port=DB['port'])) as conn:
             with conn.cursor() as cursor:
                 cursor.execute(
-                    f"UPDATE user_data SET task1 = '{task1}', task2 = '{task2}', number1 = {number1}, number2 = {number2}, comp = {comp} WHERE user_id = {user_id}")
+                    f"UPDATE user_data SET task1 = '{task1}', task2 = '{task2}', "
+                    f"number1 = {number1}, number2 = {number2}, comp = {comp} WHERE user_id = {user_id}")
             conn.commit()
 
     def change_points(self, user_id: int, add: bool = False, current_points: int = None, max_points: int = None):
@@ -143,7 +144,3 @@ class DataBase:
             return None
         else:
             return data[0]
-
-
-x=DataBase()
-print(x.get_user_data(464248327))

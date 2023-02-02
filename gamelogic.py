@@ -1,5 +1,5 @@
 import random
-from database import DataBase
+from DataBase.database import DataBase
 
 db = DataBase()
 

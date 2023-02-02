@@ -2,7 +2,7 @@ from aiogram import Bot, Dispatcher
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 
 from gamelogic import task_generator
-from database import DataBase
+from DataBase.database import DataBase
 from creds_ import TOKEN
 
 bot = Bot(token=TOKEN)

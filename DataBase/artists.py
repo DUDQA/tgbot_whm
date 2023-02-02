@@ -1,6 +1,7 @@
-# 30 наиболее популярных и подходящих к жанру исполнителей выбираю вручную.
-# Был вариант сделать автоматический переход со страницы артиста на другую через "похожих исполнителей", но алгоритмы Спотифая через 3 итерации приводят вообще в другой жанр.
-
+"""
+The 30 most popular and genre-appropriate artists are selected manually.
+There was an option to make an automatic transition from the artist's page to another through 'fans also like', but Spotify's algorithms lead to a completely different genre after 3 iterations
+"""
 
 metal = {'Pantera': 'https://open.spotify.com/artist/14pVkFUHDL207LzLHtSA18',
          'Slayer': 'https://open.spotify.com/artist/1IQ2e1buppatiN1bxUVkrk',
