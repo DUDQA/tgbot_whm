@@ -3,10 +3,13 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMar
 
 from gamelogic import task_generator
 from DataBase.database import DataBase
-from creds_ import TOKEN
+from creds_ import TOKEN, DB
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot=bot)
+
+db = DataBase(creds=DB)
+
 
 play_button = ReplyKeyboardMarkup(row_width=2,
                                   resize_keyboard=True,
@@ -18,8 +21,6 @@ playagain_button = InlineKeyboardMarkup(row_width=1)
 rb = InlineKeyboardButton(text='Retry!',
                           callback_data='r')
 playagain_button.add(rb)
-
-db = DataBase()
 
 
 async def send_task(user_id: int, question_data: dict) -> None:

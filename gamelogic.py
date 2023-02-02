@@ -1,7 +1,8 @@
 import random
 from DataBase.database import DataBase
+from creds_ import DB
 
-db = DataBase()
+db = DataBase(creds=DB)
 
 
 def pair_id_generator(db_range: int) -> list:
