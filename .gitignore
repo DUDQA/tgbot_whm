@@ -2,4 +2,5 @@
 /shelf/
 /workspace.xml
 /__pycache__/
+/.idea/
 creds___.py
