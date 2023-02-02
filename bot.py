@@ -1,6 +1,6 @@
 from aiogram import Bot, Dispatcher, executor, types
 
-from creds_ import TOKEN
+from creds_ import TOKEN, DB
 from utilities import send_task, callback_handler, play_button
 from gamelogic import task_generator
 from DataBase.database import DataBase
@@ -8,7 +8,7 @@ from DataBase.database import DataBase
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot=bot)
 
-db = DataBase()
+db = DataBase(creds=DB)
 
 
 @dp.message_handler(commands=['help'])
