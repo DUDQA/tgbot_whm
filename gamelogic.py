@@ -1,6 +1,6 @@
 import random
 from DataBase.database import DataBase
-from creds_ import DB
+from creds___ import DB
 
 db = DataBase(creds=DB)
 
