@@ -2,7 +2,7 @@
 
 #### https://t.me/whohasmorebot
 
-### This is a little pet project where I can combine business and pleasure.
+### This is a little pet-project where I can combine business and pleasure.
 
 Game principal:
 1. You are sent two answer options in the form of two photos and buttons to them. Your task is to decide which of these two songs has more streams on Spotify.
