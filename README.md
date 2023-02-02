@@ -1,6 +1,8 @@
-Telegram game bot "WhoHasMore?"
+# **Telegram game bot "WhoHasMore?"**
 
-A little pet project where I can combine business and pleasure.
+#### https://t.me/whohasmorebot
+
+### This is a little pet project where I can combine business and pleasure.
 
 Game principal:
 1. You are sent two answer options in the form of two photos and buttons to them. Your task is to decide which of these two songs has more streams on Spotify.
@@ -14,4 +16,8 @@ Operation principal:
 3. Interaction with the telegram user (AIOgram, psycopg2)
 
 
-If I have enough time and desire, another genres will be added
+There is one ignored file "creds___.py" which contains my bot's token and Postgres credentials.
+
+
+I plan to add more genres to the database and allow the user to select a genre at the beginning of the game.
+
