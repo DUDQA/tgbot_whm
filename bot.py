@@ -1,6 +1,6 @@
 from aiogram import Bot, Dispatcher, executor, types
 
-from creds_ import TOKEN, DB
+from creds___ import TOKEN, DB
 from utilities import send_task, callback_handler, play_button
 from gamelogic import task_generator
 from DataBase.database import DataBase
